@@ -28,7 +28,26 @@ int betterApproach(vector<int>& arr) {
 
 // TimeComplexity: O(n), SpaceComplexity: O(1)
 int boyerMooreAlgorithm(vector<int>& arr) {
-
+    int num = arr[0]; 
+    int freq = 0;
+    for(int i=0; i<arr.size(); i++) {
+        if(num == arr[i]){
+            freq++;
+        } else {
+            freq--;
+            if(freq == 0){
+                num = arr[i]; freq++;
+            }
+        }
+    }
+    int count = 0;
+    for(int i=0; i<arr.size(); i++) {
+        if(num == arr[i]) {
+            count++;
+            if(count > arr.size()/2) return num;
+        }
+    }
+    return -1;
 }
 
 int main(){
@@ -38,3 +57,13 @@ int main(){
     cout << "BoyerMooreAlgorithm: " << boyerMooreAlgorithm(arr) << "\n";
     return 0;
 }
+
+// OUTPUT:
+/*
+     *  Executing task: bash -c ./build/Debug/outDebug 
+
+    BruteForce: 1
+    BetterApproach: 1
+    BoyerMooreAlgorithm: 1
+     *  Terminal will be reused by tasks, press any key to close it. 
+*/
