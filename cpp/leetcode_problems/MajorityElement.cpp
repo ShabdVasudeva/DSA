@@ -51,10 +51,10 @@ int boyerMooreAlgorithm(vector<int>& arr) {
 }
 
 int main(){
-    vector<int> arr = {1,2,3,1,1};
+    vector<int> arr = {6,5,5};
     cout << "BruteForce: " << bruteForce(arr) << "\n";
     cout << "BetterApproach: " << betterApproach(arr) << "\n";
-    cout << "BoyerMooreAlgorithm: " << boyerMooreAlgorithm(arr) << "\n";
+    cout << "BoyerMooreAlgorithm: " << boyerMooreAlgorithm(arr) << "\n"; // bestest
     return 0;
 }
 
