@@ -62,11 +62,11 @@ public:
         }
     }
 
-    bool empty() { return (_size == 0); }
+    bool empty() const { return (_size == 0); }
 
-    size_t size() { return _size; }
+    size_t size() const { return _size; }
 
-    size_t capacity() { return _capacity; }
+    size_t capacity() const { return _capacity; }
 
     T& operator[](size_t index)
     {
