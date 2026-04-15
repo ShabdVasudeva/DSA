@@ -1,6 +1,5 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
-#pragma once
 #include <iostream>
 #include <vector>
 
