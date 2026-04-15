@@ -5,13 +5,14 @@
 
 using namespace std;
 
-vector<vector<int>> levelOrder(Node* root)
+vector<vector<int>> zigzagLevelOrder(Node* root)
 {
     if(!root) return {};
     vector<vector<int>> ans;
     queue<Node*> q;
     q.push(root);
-    while (!q.empty())
+    bool isSwap = false;
+    while(!q.empty())
     {
         int size = q.size();
         vector<int> level(size);
@@ -19,10 +20,12 @@ vector<vector<int>> levelOrder(Node* root)
         {
             Node* current = q.front();
             q.pop();
-            level.push_back(current->data);
+            int index = (!isSwap) ? i : (size-i-1);
+            level[index] = current->data;
             if(current->left) q.push(current->left);
             if(current->right) q.push(current->right);
         }
+        isSwap = !isSwap;
         ans.push_back(level);
     }
     return ans;
@@ -45,7 +48,7 @@ int main()
     vector<int> preorder_sequence = {3,9,-1,-1,20,15,-1,-1,7,-1,-1};
     Node* root = Node::buildTree(preorder_sequence);
     // Node::preorderTraversal(root);
-    vector<vector<int>> ans = levelOrder(root);
+    vector<vector<int>> ans = zigzagLevelOrder(root);
     printAns(ans);
     return 0;
 }
