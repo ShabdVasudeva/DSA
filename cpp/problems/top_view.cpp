@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void topView(Node* root)
+void top_view(Node* root)
 {
     if(!root) 
     {
