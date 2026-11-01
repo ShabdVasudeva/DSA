@@ -1,4 +1,4 @@
-package java.basics;
+package Java.basics;
 
 import java.util.*;
 
@@ -9,6 +9,7 @@ public class Output {
         double c = 23.00;
         String name = "APW";
         System.out.println("hello, world");
-        System.out.println();
+        System.out.println(name);
+        System.out.println(a + "\n" + b + "\n" + c);
     }
 }
